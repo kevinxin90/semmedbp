@@ -39,7 +39,7 @@ def load_data(data_folder):
                                             'umls': _item[4][5:],
                                             'name': id_type_mapping[_item[4]]['name']}
                 pred = _item[0].lower()
-                semantic_type = id_type_mapping[_item[5]]
+                semantic_type = id_type_mapping[_item[5]]['type']
                 if pred not in bp_related[_item[4]]:
                     bp_related[_item[4]][pred] = {}
                 if semantic_type not in bp_related[_item[4]][pred]:
@@ -54,7 +54,7 @@ def load_data(data_folder):
                                             'umls': _item[5][5:],
                                             'name': id_type_mapping[_item[5]]['name']}
                 pred = _item[0].lower() + '_reverse'
-                semantic_type = id_type_mapping[_item[4]]
+                semantic_type = id_type_mapping[_item[4]]['type']
                 if pred not in bp_related[_item[5]]:
                     bp_related[_item[5]][pred] = {}
                 if semantic_type not in bp_related[_item[5]][pred]:
